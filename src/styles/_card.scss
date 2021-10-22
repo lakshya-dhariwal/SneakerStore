@@ -1,40 +1,18 @@
 .card {
-  border: solid 1px $black;
   width: 20rem;
-  height: 20rem;
+  height: 16rem;
   margin: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  text-align: center;
 
-  div {
-    margin-top: 1rem;
+  text-align: center;
+  h2 {
+    font-size: 1.25rem;
+    font-weight: 500;
   }
   img {
     width: 100%;
-  }
-  span {
-    display: flex;
-    justify-content: space-between;
-    background-color: white;
-    color: $black;
-
-    width: 100%;
-    button {
-      height: 100%;
-      width: 3rem;
-      font-size: 1.25rem;
-      background-color: $black;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-    h6 {
-      padding: 0.25rem;
-      font-size: 1.25rem;
-    }
   }
 
   //glass background

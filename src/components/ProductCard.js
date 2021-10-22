@@ -1,20 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function ProductCard({ product }) {
-  console.log(product.imgUrl);
   return (
     <div>
       <div className="card">
-        <img src={product.imgUrl} alt={product.name} />
+        <Link to={`/product/${product.id}`} style={{ textDecoration: "none" }}>
+          <img src={product.imgUrl} alt={product.name} />
+        </Link>
         <div>
-          <h3>{product.name}</h3>
+          <h2>{product.name}</h2>
           <h3>${product.price}</h3>
         </div>
-        <span>
-          <button>-</button>
-          <h6>Add to Cart</h6>
-          <button>+</button>
-        </span>
       </div>
     </div>
   );

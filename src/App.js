@@ -6,7 +6,7 @@ import "./styles/index.scss";
 import Nav from "./components/Nav.js";
 import Home from "./components/Home.js";
 import Cart from "./components/Cart.js";
-import ProductCard from "./components/ProductCard.js";
+import ProductDetail from "./components/ProductPage.js";
 
 function App() {
   return (
@@ -20,6 +20,9 @@ function App() {
             </Route>
             <Route exact path="/cart">
               <Cart />
+            </Route>
+            <Route exact path="/product/:id">
+              <ProductDetail />
             </Route>
           </Switch>
         </div>
