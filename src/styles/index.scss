@@ -1,6 +1,26 @@
+//font
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300&family=Roboto:wght@100;300&display=swap");
+
+// variables
+$accent: #2fdbb3;
+$black: #232529;
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Merriweather Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
+Link {
+  textdecoration: "none";
+}
+
+.border {
+  position: sticky;
+  width: 100%;
+  height: 100%;
+  border: solid 5px #3bcaa9;
+}
+
+@import "./nav";
+@import "./card";

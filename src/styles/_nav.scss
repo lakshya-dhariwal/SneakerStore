@@ -1,0 +1,22 @@
+.nav {
+  min-height: 5vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: $black;
+  color: white;
+  position: sticky;
+  h3 {
+    color: white;
+  }
+  span {
+    color: $accent;
+  }
+  button {
+    border: none;
+    color: white;
+    background-color: $black;
+    cursor: pointer;
+  }
+}
