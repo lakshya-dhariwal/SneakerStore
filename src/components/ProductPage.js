@@ -1,23 +1,27 @@
 import React, { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import data from "../data.js";
 
-import { cartCounterIncrement } from "../actions";
+import { cartCounterIncrement, addToCartListIncrement } from "../actions";
 
 function ProductDetail({ params }) {
+  //to create product page
   let { id } = useParams();
-  console.log(id);
   const toBuyProduct = data().filter((product) => {
     return product.id === id;
   });
-  const [productQuantToAdd, setProductQuantToAdd] = useState(1);
+
+  //for adding to cart
+  const [size, setSize] = useState("3.5");
   const dispatch = useDispatch();
-  let size = 6;
-  let quantity;
   const formSubmitHandler = (e) => {
+    let product = { uuid: uuidv4(), details: toBuyProduct[0], size };
     e.preventDefault();
-    quantity = dispatch(cartCounterIncrement(productQuantToAdd));
+    dispatch(cartCounterIncrement());
+    dispatch(addToCartListIncrement(product));
+    console.log(product);
   };
   return (
     <div className="product-page">
@@ -28,8 +32,12 @@ function ProductDetail({ params }) {
         <h1>{toBuyProduct[0].name}</h1>
         <h2>${toBuyProduct[0].price}</h2>
         <form action="addToCart" onSubmit={formSubmitHandler}>
-          <label for="size">Choose Size (UK/India) </label>
-          <select name="size" id="cars" value={size}>
+          <label htmlFor="size">Choose Size (UK/India) </label>
+          <select
+            name="size"
+            id="cars"
+            onChange={(e) => setSize(e.target.value)}
+          >
             <option value="3.5">3.5</option>
             <option value="4">4</option>
             <option value="4.5">4.5</option>
@@ -49,17 +57,9 @@ function ProductDetail({ params }) {
             <option value="11.5">11.5</option>
             <option value="12">12</option>
           </select>
-          <br />
-          <label for="quantity">Quantity </label>
-          <input
-            type="number"
-            onChange={(e) => setProductQuantToAdd(e.target.value)}
-          />
-          <br />
+
           <button type="submit">Add to Bag</button>
         </form>
-
-        <h3>Delivery might take upto 7 days.</h3>
       </div>
     </div>
   );

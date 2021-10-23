@@ -22,7 +22,11 @@ Link {
   height: 100%;
   border: solid 5px #3bcaa9;
 }
-
+.conatiner {
+  display: flex;
+  justify-content: centre;
+  align-items: center;
+}
 @import "./nav";
 @import "./card";
 @import "./footer";

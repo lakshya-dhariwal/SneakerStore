@@ -1,9 +1,9 @@
 const cartCounterReducer = (state = 0, action) => {
   switch (action.type) {
     case "INCREMENT":
-      return state + Number(action.quantity);
+      return state + 1;
     case "DECREMENT":
-      return state - Number(action.quantity);
+      return state - 1;
     default:
       return state;
   }

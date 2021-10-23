@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 
 function Nav() {
   const cartCounter = useSelector((state) => state.cartCounter);
-  console.log(cartCounter);
   return (
     <>
       <div className="nav">

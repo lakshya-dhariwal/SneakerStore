@@ -1,6 +1,11 @@
-export const cartCounterIncrement = (quantity) => {
+export const cartCounterIncrement = () => {
   return {
     type: "INCREMENT",
-    quantity,
+  };
+};
+export const addToCartListIncrement = (product) => {
+  return {
+    type: "ADD",
+    product,
   };
 };
