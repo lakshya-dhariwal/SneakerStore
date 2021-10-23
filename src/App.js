@@ -7,6 +7,7 @@ import Nav from "./components/Nav.js";
 import Footer from "./components/Footer.js";
 import Home from "./components/Home.js";
 import Cart from "./components/Cart.js";
+import Success from "./components/Success.js";
 import ProductDetail from "./components/ProductPage.js";
 
 function App() {
@@ -24,6 +25,10 @@ function App() {
             </Route>
             <Route exact path="/product/:id">
               <ProductDetail />
+            </Route>
+
+            <Route exact path="/success">
+              <Success />
             </Route>
           </Switch>
           <Footer />

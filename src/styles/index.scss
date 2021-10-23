@@ -13,7 +13,7 @@ $black: #121212;
   font-family: "Poppins", sans-serif;
 }
 Link {
-  textdecoration: "none";
+  text-decoration: "none";
 }
 
 .border {
@@ -30,4 +30,6 @@ Link {
 @import "./nav";
 @import "./card";
 @import "./footer";
+@import "./cart";
 @import "./product-page";
+@import "./success";

@@ -57,7 +57,8 @@ function ProductDetail({ params }) {
             <option value="11.5">11.5</option>
             <option value="12">12</option>
           </select>
-
+          <br />
+          <br />
           <button type="submit">Add to Bag</button>
         </form>
       </div>
