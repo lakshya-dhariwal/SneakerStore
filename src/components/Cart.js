@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -9,7 +9,7 @@ function Cart() {
   const cartList = useSelector((state) => state.cartList);
 
   const cartCounter = useSelector((state) => state.cartCounter);
-  const [total, setTotal] = useState(0);
+  // const [total, setTotal] = useState(0);
   const deleteHandler = (id) => {
     const newStateValue = cartList.filter((item) => {
       return item.uuid !== id;
@@ -17,15 +17,15 @@ function Cart() {
     dispatch(updateCartList(newStateValue));
     dispatch(resetCartCounter(newStateValue.length));
     //cart total update
-    newStateValue.map((item) => {
-      return setTotal(total + item.details.price);
-    });
+    // newStateValue.map((item) => {
+    //   return setTotal(total + item.details.price);
+    // });
   };
-  useEffect(() => {
-    cartList.map((item) => {
-      return setTotal(total + item.details.price);
-    });
-  });
+  // useEffect(() => {
+  //   cartList.map((item) => {
+  //     return setTotal(total + item.details.price);
+  //   });
+  // });
 
   return (
     <div className="cart">
@@ -35,7 +35,7 @@ function Cart() {
           Total Items <span>{cartCounter}</span> {}
         </h2>
         <h2>
-          Cart Total - Rs. <span>{total}</span> {}
+          {/* Cart Total - Rs. <span>{total}</span> {} */}
         </h2>
       </div>
 
