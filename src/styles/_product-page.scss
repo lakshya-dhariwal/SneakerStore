@@ -29,8 +29,13 @@
         width: 50vh;
         padding: 0.5rem;
         cursor: pointer;
+        transition: all 0.5s ease;
         &:hover {
-          background-color: rgb(39, 107, 100);
+          background-color: $darker-accent;
+
+          // transform: ;
+          transform: scale(1.025, 1.025);
+          background-color: $accent;
         }
       }
     }

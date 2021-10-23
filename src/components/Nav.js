@@ -1,6 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 function Nav() {
+  const cartCounter = useSelector((state) => state.cartCounter);
+  console.log(cartCounter);
   return (
     <>
       <div className="nav">
@@ -13,7 +17,7 @@ function Nav() {
           <button>
             Cart{" "}
             <sup>
-              <span>0</span>
+              <span>{cartCounter}</span>
             </sup>
           </button>
         </Link>

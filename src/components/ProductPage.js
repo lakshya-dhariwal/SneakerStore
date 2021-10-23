@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import data from "../data.js";
+
+import { cartCounterIncrement } from "../actions";
 
 function ProductDetail({ params }) {
   let { id } = useParams();
@@ -8,7 +11,14 @@ function ProductDetail({ params }) {
   const toBuyProduct = data().filter((product) => {
     return product.id === id;
   });
-  console.log(toBuyProduct);
+  const [productQuantToAdd, setProductQuantToAdd] = useState(1);
+  const dispatch = useDispatch();
+  let size = 6;
+  let quantity;
+  const formSubmitHandler = (e) => {
+    e.preventDefault();
+    quantity = dispatch(cartCounterIncrement(productQuantToAdd));
+  };
   return (
     <div className="product-page">
       <div>
@@ -17,9 +27,9 @@ function ProductDetail({ params }) {
       <div className="details">
         <h1>{toBuyProduct[0].name}</h1>
         <h2>${toBuyProduct[0].price}</h2>
-        <form action="addToCart">
+        <form action="addToCart" onSubmit={formSubmitHandler}>
           <label for="size">Choose Size (UK/India) </label>
-          <select name="size" id="cars">
+          <select name="size" id="cars" value={size}>
             <option value="3.5">3.5</option>
             <option value="4">4</option>
             <option value="4.5">4.5</option>
@@ -41,7 +51,10 @@ function ProductDetail({ params }) {
           </select>
           <br />
           <label for="quantity">Quantity </label>
-          <input type="number" />
+          <input
+            type="number"
+            onChange={(e) => setProductQuantToAdd(e.target.value)}
+          />
           <br />
           <button type="submit">Add to Bag</button>
         </form>

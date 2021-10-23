@@ -1,0 +1,19 @@
+.footer {
+  height: 10rem;
+  margin-top: 4rem;
+  background-color: $black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  text-align: center;
+  a {
+    text-decoration: none;
+    color: $accent;
+  }
+  span {
+    color: $accent;
+  }
+}

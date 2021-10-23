@@ -3,7 +3,8 @@
 
 // variables
 $accent: #2fdbb3;
-$black: #232529;
+$darker-accent: rgb(39, 107, 100);
+$black: #121212;
 
 * {
   margin: 0;
@@ -24,4 +25,5 @@ Link {
 
 @import "./nav";
 @import "./card";
+@import "./footer";
 @import "./product-page";

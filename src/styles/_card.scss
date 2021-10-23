@@ -1,12 +1,13 @@
 .card {
   width: 20rem;
   height: 16rem;
-  margin: 1rem;
+  margin-top: 4rem;
+  margin-left: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-
   text-align: center;
+  transition: all 0.8s ease;
   h2 {
     font-size: 1.25rem;
     font-weight: 500;
@@ -15,11 +16,17 @@
     width: 100%;
   }
 
-  //glass background
+  //hover animation
+  &:hover {
+    // transform: ;
+    transform: scale(1.1, 1.1);
+    background-color: $accent;
+  }
 }
 
 //card grid is from Home.js it contains all .card product cards
 .cardGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  margin: 0.5rem auto;
 }
