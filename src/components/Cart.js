@@ -7,7 +7,7 @@ import { updateCartList, resetCartCounter } from "../actions";
 function Cart() {
   const dispatch = useDispatch();
   const cartList = useSelector((state) => state.cartList);
-  let sum = 0;
+
   const cartCounter = useSelector((state) => state.cartCounter);
   const [total, setTotal] = useState(0);
   const deleteHandler = (id) => {
@@ -18,16 +18,14 @@ function Cart() {
     dispatch(resetCartCounter(newStateValue.length));
     //cart total update
     newStateValue.map((item) => {
-      sum = sum + item.details.price;
+      return setTotal(total + item.details.price);
     });
-    setTotal(sum);
   };
   useEffect(() => {
     cartList.map((item) => {
-      sum = sum + item.details.price;
+      return setTotal(total + item.details.price);
     });
-    setTotal(sum);
-  }, []);
+  });
 
   return (
     <div className="cart">
@@ -47,7 +45,7 @@ function Cart() {
             <div key={item.uuid}>
               <div className="list-item">
                 <h5>{item.details.name}</h5>
-                <img src={item.details.imgUrl}></img>
+                <img src={item.details.imgUrl} alt="product"></img>
                 <h5>Rs.{item.details.price}</h5>
                 <h5>UK {item.size}</h5>
                 <button type="button" onClick={() => deleteHandler(item.uuid)}>
