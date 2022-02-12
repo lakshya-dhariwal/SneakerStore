@@ -1,6 +1,6 @@
 # Sneaker Store 
 
-https://the-sneaker-store.vercel.app/
+Live: https://the-sneaker-store.vercel.app/
 ---
  Made with React , Redux , React Routers and SASS
 
